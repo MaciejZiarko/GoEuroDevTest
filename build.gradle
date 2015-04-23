@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:1.2.3.RELEASE')
+    }
+}
+
+apply plugin: 'spring-boot'
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter')
+    compile('com.squareup.retrofit:retrofit:1.9.0')
+    compile('com.google.guava:guava:18.0')
+    compile('net.sf.opencsv:opencsv:2.3')
+    testCompile('org.spockframework:spock-core:1.0-groovy-2.4')
+    testCompile('org.spockframework:spock-spring:1.0-groovy-2.4')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.codehaus.groovy:groovy-all:2.4.3')
+    testCompile('org.assertj:assertj-core:2.0.0')
+    testCompile('cglib:cglib-nodep:2.2')
+}
