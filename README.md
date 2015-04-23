@@ -18,7 +18,7 @@ java -jar ./build/libs/GoEuroDevTest-1.0.jar "New York"
 ```
 
 By default application writes result to file `output.csv` residing in working directory.
-File location and name can be customized by setting `output.file.path` property
+File location and name can be customized by setting `output.file.path` property.
 For example:
 
 ``` 
