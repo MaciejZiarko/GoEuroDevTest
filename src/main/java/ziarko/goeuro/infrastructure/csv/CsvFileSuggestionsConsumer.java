@@ -16,14 +16,14 @@ import static au.com.bytecode.opencsv.CSVWriter.DEFAULT_SEPARATOR;
 import static au.com.bytecode.opencsv.CSVWriter.NO_QUOTE_CHARACTER;
 
 @Component
-class CsvFileSuggestionConsumer implements SuggestionsConsumer {
+class CsvFileSuggestionsConsumer implements SuggestionsConsumer {
 
     private final String outputFilePath;
     private final SuggestionToCsvLineMapper suggestionToCsvLineMapper;
 
     @Autowired
-    public CsvFileSuggestionConsumer(@Value("${output.file.path}") String outputFilePath,
-                                     SuggestionToCsvLineMapper suggestionToCsvLineMapper) throws IOException {
+    public CsvFileSuggestionsConsumer(@Value("${output.file.path}") String outputFilePath,
+                                      SuggestionToCsvLineMapper suggestionToCsvLineMapper) throws IOException {
         this.outputFilePath = outputFilePath;
         this.suggestionToCsvLineMapper = suggestionToCsvLineMapper;
     }

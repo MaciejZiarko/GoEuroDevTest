@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.*;
 import java.nio.file.Files
 import java.nio.file.Paths
 
-class CsvFileSuggestionConsumerIntegrationSpec extends Specification {
+class CsvFileSuggestionsConsumerIntegrationSpec extends Specification {
 
     final String TEST_FILE_PATH = 'testFile.csv'
     final List<Suggestion> FIXTURE_SUGGESTIONS = [
@@ -20,7 +20,7 @@ class CsvFileSuggestionConsumerIntegrationSpec extends Specification {
     ]
 
     @Subject
-    CsvFileSuggestionConsumer tested = new CsvFileSuggestionConsumer(TEST_FILE_PATH, new SuggestionToCsvLineMapper())
+    CsvFileSuggestionsConsumer tested = new CsvFileSuggestionsConsumer(TEST_FILE_PATH, new SuggestionToCsvLineMapper())
 
     def "Should write valid CSV file to location given in constructor"() {
         when:
