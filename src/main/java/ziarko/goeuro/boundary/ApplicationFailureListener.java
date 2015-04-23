@@ -6,6 +6,8 @@ import org.springframework.boot.context.event.ApplicationFailedEvent;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 
+import static org.apache.commons.lang3.exception.ExceptionUtils.getRootCause;
+
 public class ApplicationFailureListener implements ApplicationListener {
 
     private static final Logger LOG = LoggerFactory.getLogger(ApplicationFailureListener.class);
@@ -19,7 +21,9 @@ public class ApplicationFailureListener implements ApplicationListener {
 
     private void handleApplicationFailure(ApplicationEvent event) {
         ApplicationFailedEvent applicationFailedEvent = (ApplicationFailedEvent) event;
-        LOG.error(applicationFailedEvent.getException().getCause().getMessage());
+        Throwable rootCause = getRootCause(applicationFailedEvent.getException());
+        LOG.error("{} occurred", rootCause.getClass().getName());
+        LOG.error(rootCause.getMessage());
         System.exit(-1);
     }
 

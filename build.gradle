@@ -23,6 +23,7 @@ dependencies {
     compile('com.squareup.retrofit:retrofit:1.9.0')
     compile('com.google.guava:guava:18.0')
     compile('net.sf.opencsv:opencsv:2.3')
+    compile('org.apache.commons:commons-lang3:3.4')
     testCompile('org.spockframework:spock-core:1.0-groovy-2.4')
     testCompile('org.spockframework:spock-spring:1.0-groovy-2.4')
     testCompile('org.springframework.boot:spring-boot-starter-test')
