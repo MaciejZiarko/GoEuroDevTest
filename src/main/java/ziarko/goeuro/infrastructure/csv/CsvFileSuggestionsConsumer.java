@@ -23,7 +23,7 @@ class CsvFileSuggestionsConsumer implements SuggestionsConsumer {
 
     @Autowired
     public CsvFileSuggestionsConsumer(@Value("${output.file.path}") String outputFilePath,
-                                      SuggestionToCsvLineMapper suggestionToCsvLineMapper) throws IOException {
+                                      SuggestionToCsvLineMapper suggestionToCsvLineMapper) {
         this.outputFilePath = outputFilePath;
         this.suggestionToCsvLineMapper = suggestionToCsvLineMapper;
     }
